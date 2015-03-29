@@ -66,7 +66,7 @@ namespace testing_pzw2
                     }
                 case 8:
                     {
-                        name = "Kolokvoz";
+                        name = "Kolovoz";
                         break;
                     }
                 case 9:
@@ -134,9 +134,9 @@ namespace testing_pzw2
                 case 2:
                     {
                         if (isLeapYear())
-                            broj = 28 - day;
-                        else
                             broj = 29 - day;
+                        else
+                            broj = 28 - day;
                         break;
                     }
                 default:

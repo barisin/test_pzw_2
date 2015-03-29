@@ -53,6 +53,60 @@ namespace pzw2_tests
             Assert.AreEqual(false, flag, "Error in leap year check! Should be false!");
         }
 
+        [TestMethod]
+        public void getNumberOfDays31()
+        {
+            Date a = new Date(22, 3, 2001);
+            int exp = 31 - 22;
+            Assert.AreEqual(exp, a.getNumberOfRemaingDaysInMonth(), "Error, miscalculation!");
+        }
 
+        [TestMethod]
+        public void getNumberOfDays30()
+        {
+            Date a = new Date(22, 4, 2001);
+            int exp = 30 - 22;
+            Assert.AreEqual(exp, a.getNumberOfRemaingDaysInMonth(), "Error, miscalculation!");
+        }
+
+        [TestMethod]
+        public void getNumberOfDaysFebrNotLeap()
+        {
+            Date a = new Date(22, 2, 2001);
+            int exp = 28 - 22;
+            Assert.AreEqual(exp, a.getNumberOfRemaingDaysInMonth(), "Error, miscalculation!");
+        }
+
+        [TestMethod]
+        public void getNumberOfDaysFebrIsLeap()
+        {
+            Date a = new Date(22, 2, 2004);
+            int exp = 29 - 22;
+            Assert.AreEqual(exp, a.getNumberOfRemaingDaysInMonth(), "Error, miscalculation!");
+        }
+
+        [TestMethod]
+        public void getNumberOfDaysFebrNone()
+        {
+            Date a = new Date(22, 14, 2004);
+            int exp = -1;
+            Assert.AreEqual(exp, a.getNumberOfRemaingDaysInMonth(), "Error, miscalculation!");
+        }
+
+        [TestMethod]
+        public void getMonthNameTest()
+        {
+            Date a = new Date(26, 6, 1994);
+            string exp = "Lipanj";
+            Assert.AreEqual(exp, a.getMonthName(), "Wrong month name!");
+        }
+
+        [TestMethod]
+        public void getMonthNameTestNone()
+        {
+            Date a = new Date();
+            string exp = "";
+            Assert.AreEqual(exp, a.getMonthName(), "Wrong month name!");
+        }
     }
 }
